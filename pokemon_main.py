@@ -1,7 +1,7 @@
 import json
 import logging
 
-from aws import lambda_function as aws
+from pokemon import lambda_function as pok
 
 
 logging.basicConfig(filename='poke.log')
@@ -10,7 +10,7 @@ log.setLevel(logging.INFO)
 
 
 def main():
-    result = aws.lambda_handler({"name": "pikachu"}, None)
+    result = pok.lambda_handler({"name": "pikachu"}, None)
     log.info(f"Received event:\n{json.dumps(result, indent=2)}")
 
 
